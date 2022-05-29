@@ -7,8 +7,8 @@ type propsShowNumber = {
 export const Counter = (props:propsShowNumber) => {
 
     return (
-        <div className="App">
+        <h1>
             {props.newNumber}
-        </div>
+        </h1>
     );
 }
