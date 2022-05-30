@@ -6,6 +6,8 @@ import style from './App.module.css'
 
 export const App = () => {
     let [newNumber, setNewNumber] = useState(0)
+    let [valueMaxInput, setMaxInput] = useState('')
+    let [valueStartInput, setStartInput] = useState('')
 
     const counterNumber = () => {
         setNewNumber(newNumber + 1)
@@ -13,12 +15,7 @@ export const App = () => {
     const counterReset = () => {
         setNewNumber(0)
     }
-    const disabledIns = () => {
 
-    }
-    const disabledReset = () => {
-
-    }
 
 
     return (
@@ -27,16 +24,15 @@ export const App = () => {
                 <div className={style.value}>
                     <div className={style.containerInput}>
                         <div className={style.inputName}>
-                            <h3>{"max value:"}</h3><Input />
+                            <h3>{"max value:"}</h3><Input  setValueInput={setMaxInput} inputValue={valueMaxInput}/>
                         </div>
                         <div className={style.inputName}>
-                            <h3>{"start value:"}</h3><Input/>
+                            <h3>{"start value:"}</h3><Input setValueInput={setStartInput} inputValue={valueStartInput}/>
                         </div>
                     </div>
                     <div className={style.buttonSet}>
                         <Button name={'SET'}
                                 callBack={counterReset}
-                                callBackDisabled={disabledReset}
                         />
                     </div>
                 </div>
@@ -47,11 +43,10 @@ export const App = () => {
                     <div className={style.containerButton}>
                         <Button name={'INS'}
                                 callBack={counterNumber}
-                                callBackDisabled={disabledIns}
+
                         />
                         <Button name={'RESET'}
                                 callBack={counterReset}
-                                callBackDisabled={disabledReset}
                         />
                     </div>
                 </div>

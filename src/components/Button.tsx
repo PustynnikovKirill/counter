@@ -4,19 +4,16 @@ import style from './../App.module.css'
 export type ButtonType = {
     name: string
     callBack: () => void
-    callBackDisabled: () => void
 }
 export const Button = (props: ButtonType) => {
 
-    const onClickIns = () => {
+    const onClickHandler = () => {
         props.callBack()
     }
-    const disabledButton = ()=>{
-        props.callBackDisabled()
-    }
+
     return (
         <div>
-            <button onClick={onClickIns} className={style.button} disabled={disabledButton}>{props.name}</button>
+            <button onClick={onClickHandler} className={style.button} >{props.name}</button>
         </div>
     );
 }
