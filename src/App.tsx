@@ -1,22 +1,39 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import {Button} from "./components/Button";
 import {Counter} from "./components/Сounter";
 import {Input} from "./components/Input";
 import style from './App.module.css'
 
 export const App = () => {
-    let [newNumber, setNewNumber] = useState(0)
-    let [valueMaxInput, setMaxInput] = useState('')
-    let [valueStartInput, setStartInput] = useState('')
 
-    const counterNumber = () => {
-        setNewNumber(newNumber + 1)
+
+    let [newNumber, setNewNumber] = useState(0)
+    let [valueMaxInput, setMaxInput] = useState(0)
+    let [valueStartInput, setStartInput] = useState(0)
+
+    const counterButtonSet = () => {
+
     }
-    const counterReset = () => {
+
+    const counterButtonIns = () => {
+        if (newNumber < valueMaxInput) {
+            setNewNumber(newNumber + 1)
+        }
+    }
+    const counterButtonReset = () => {
         setNewNumber(0)
     }
 
-
+    const setMaxInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        if(Number(event.currentTarget.value) >= valueStartInput) {
+            setMaxInput(Number(event.currentTarget.value))
+        }
+    }
+    const setStartInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        if(+event.currentTarget.value <= valueMaxInput) {
+            setStartInput(Number(event.currentTarget.value))
+        }
+    }
 
     return (
         <div className={style.app}>
@@ -24,15 +41,15 @@ export const App = () => {
                 <div className={style.value}>
                     <div className={style.containerInput}>
                         <div className={style.inputName}>
-                            <h3>{"max value:"}</h3><Input  setValueInput={setMaxInput} inputValue={valueMaxInput}/>
+                            <h3>{"max value:"}</h3><Input setValueInput={setMaxInputHandler} inputValue={valueMaxInput}/>
                         </div>
                         <div className={style.inputName}>
-                            <h3>{"start value:"}</h3><Input setValueInput={setStartInput} inputValue={valueStartInput}/>
+                            <h3>{"start value:"}</h3><Input setValueInput={setStartInputHandler} inputValue={valueStartInput}/>
                         </div>
                     </div>
                     <div className={style.buttonSet}>
                         <Button name={'SET'}
-                                callBack={counterReset}
+                                callBack={counterButtonSet}
                         />
                     </div>
                 </div>
@@ -42,11 +59,12 @@ export const App = () => {
                     </div>
                     <div className={style.containerButton}>
                         <Button name={'INS'}
-                                callBack={counterNumber}
+                                callBack={counterButtonIns}
+                                disabled={newNumber === valueMaxInput ? true : false}
 
                         />
                         <Button name={'RESET'}
-                                callBack={counterReset}
+                                callBack={counterButtonReset}
                         />
                     </div>
                 </div>
