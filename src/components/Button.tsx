@@ -3,8 +3,8 @@ import style from './../App.module.css'
 
 export type ButtonType = {
     name: string
-    disabled?: boolean
     callBack: () => void
+    disabled?: boolean
 }
 export const Button = (props: ButtonType) => {
 
@@ -14,7 +14,7 @@ export const Button = (props: ButtonType) => {
 
     return (
         <div>
-            <button disabled={props.disabled} onClick={onClickHandler} className={style.button} >{props.name}</button>
+            <button onClick={onClickHandler} disabled={props.disabled} className={style.button} >{props.name}</button>
         </div>
     );
 }

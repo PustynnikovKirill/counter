@@ -8,9 +8,12 @@ export type InputType = {
 }
 export const Input = (props: InputType) => {
 
+
     return (
         <div>
-            <input type='number' value={props.inputValue} onChange={props.setValueInput} className={style.input}/>
+            <input type='number' value={props.inputValue}
+                   onChange={props.setValueInput}
+                   className={style.input}/>
         </div>
     );
 }
