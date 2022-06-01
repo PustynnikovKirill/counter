@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import {Button} from "./components/Button";
 import {Counter} from "./components/Сounter";
 import {Input} from "./components/Input";
@@ -11,6 +11,12 @@ export const App = () => {
     let [valueMaxInput, setMaxInput] = useState(0)
     let [valueStartInput, setStartInput] = useState(0)
     let [error, setError] = useState<string | null>(null)
+
+    useEffect(() => {
+        if (valueStartInput === valueMaxInput) {
+            setError('Error')
+        }
+    },[valueStartInput])
 
     const counterButtonSet = () => {
         setNewNumber(valueStartInput)
