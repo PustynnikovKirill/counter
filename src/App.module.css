@@ -62,3 +62,10 @@
     height: 35px;
 
 }
+.error {
+    border: red 3px solid;
+}
+
+.errorMessage {
+    color: red;
+}

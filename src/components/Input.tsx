@@ -5,6 +5,8 @@ import {ChangeEvent} from "react";
 export type InputType = {
     setValueInput:(event: ChangeEvent<HTMLInputElement>)=>void
     inputValue:number
+    error:string | null
+
 }
 export const Input = (props: InputType) => {
 
@@ -13,7 +15,7 @@ export const Input = (props: InputType) => {
         <div>
             <input type='number' value={props.inputValue}
                    onChange={props.setValueInput}
-                   className={style.input}/>
+                   className={`${style.input} ${props.error ? style.error:''}`}/>
         </div>
     );
 }
