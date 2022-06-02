@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e503c24-00e7-4151-a6ab-8e4f521a66da" name="Changes" comment="">
+    <list default="true" id="038396df-ec61-4253-adf2-7f5732a37456" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Сounter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Сounter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +17,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="29zFT3RYxQOLCT6D8pzQdZgymIB" />
+  <component name="ProjectId" id="2A17njXCkqYKHCRMwAVJBdHEEho" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,12 +35,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7e503c24-00e7-4151-a6ab-8e4f521a66da" name="Changes" comment="" />
-      <created>1654108012058</created>
+      <changelist id="038396df-ec61-4253-adf2-7f5732a37456" name="Changes" comment="" />
+      <created>1654165408028</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1654108012058</updated>
-      <workItem from="1654108014431" duration="1397000" />
+      <updated>1654165408028</updated>
+      <workItem from="1654165409146" duration="182000" />
+      <workItem from="1654169492033" duration="5694000" />
     </task>
     <servers />
   </component>

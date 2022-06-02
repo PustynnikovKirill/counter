@@ -18,15 +18,39 @@ export const App = () => {
         }
     },[valueStartInput])
 
+    useEffect(()=>{
+        let valueStar = localStorage.getItem('1count')
+        if(valueStar) {
+            let newValueStart = JSON.parse(valueStar)
+            setStartInput(newValueStart)
+        }
+        let valueMax = localStorage.getItem('2count')
+        if (valueMax){
+            let newValueMax = JSON.parse(valueMax)
+            setMaxInput(newValueMax)
+        }
+    },[])
+
+    useEffect(()=>{
+        localStorage.setItem('1count', JSON.stringify(valueStartInput))
+        localStorage.setItem('2count', JSON.stringify(valueMaxInput))
+    },[valueStartInput,valueMaxInput])
+
+
+
     const counterButtonSet = () => {
+
         setNewNumber(valueStartInput)
     }
 
     const ButtonInsHandler = () => {
-            setNewNumber(newNumber + 1)
+        setNewNumber(newNumber + 1)
     }
     const ButtonResetHandler = () => {
+
         setNewNumber(0)
+        setMaxInput(0)
+        setStartInput(0)
         setError (null)
     }
 
